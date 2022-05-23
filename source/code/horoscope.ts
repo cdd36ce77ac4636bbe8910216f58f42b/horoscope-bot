@@ -13,11 +13,12 @@ export class Horoscope {
     this.zodiac = zodiac
   }
 
-  getPredictionDay = async (): Promise<number> => {
+  getPredictionDate = async (): Promise<string> => {
     const fullUrl = this.baseUrl
     const parser = new HttpParser(fullUrl)
     const day = await parser.getElementsTextByClassName("p-prediction__date-day")
-    return Number(day)
+    const month = await parser.getElementsTextByClassName("p-prediction__date__text__inner")
+    return day + " " + month
   }
 
   getPrediction = async (): Promise<string> => {

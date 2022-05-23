@@ -11,12 +11,12 @@ export class HoroscopeTest {
     assert.throws(() => { new Horoscope("none") })
   }
 
-  testGetPredictionDay = async (): Promise<void> => {
+  testGetPredictionDate = async (): Promise<void> => {
     const horoscope = new Horoscope("capricorn")
-    const predictionDay = await horoscope.getPredictionDay()
+    const predictionDate = await horoscope.getPredictionDate()
 
-    assert.ok(typeof predictionDay == "number")
-    assert.ok(predictionDay >= 1 && predictionDay <= 31)
+    assert.ok(typeof predictionDate == "string")
+    assert.ok(predictionDate.length > 0)
   }
 
   testGetPrediction = async (): Promise<void> => {
@@ -31,8 +31,8 @@ export class HoroscopeTest {
     this.testConstructor()
     logs.writeSuccessTestMessage("Horoscope", "constructor")
 
-    await this.testGetPredictionDay()
-    logs.writeSuccessTestMessage("Horoscope", "getPredictionDay")
+    await this.testGetPredictionDate()
+    logs.writeSuccessTestMessage("Horoscope", "getPredictionDate")
 
     await this.testGetPrediction()
     logs.writeSuccessTestMessage("Horoscope", "getPrediction")

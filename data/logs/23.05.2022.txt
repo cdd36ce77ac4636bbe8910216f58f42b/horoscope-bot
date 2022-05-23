@@ -1,374 +1,64 @@
-[14:06:05] logs test 379258.30196103756
-[14:06:05] [ZodiacSigns] getSign is OK!
-[14:06:05] [ZodiacSigns] hasSign is OK!
-[14:06:06] [HttpParser] getHtmlString is OK!
-[14:06:06] [HttpParser] getElementsByClassName is OK!
-[14:06:06] [HttpParser] getElementsTextByClassName is OK!
-[14:06:06] [Horoscope] constructor is OK!
-[14:06:07] [Horoscope] getPredictionDay is OK!
-[14:06:08] [Horoscope] getPrediction is OK!
-[14:06:08] [Bot] me is OK!
-[14:06:08] [Bot] methods is OK!
-[14:06:08] [TextMessagesHandler] isTextCommand is OK!
-[14:06:08] [Commands] has is OK!
-[14:06:08] [Commands] equal is OK!
-[14:06:08] [Settings] getChatSetting is OK!
-[14:06:08] [Settings] toggleChatSetting is OK!
-[14:06:09] Horoscope bot launched!
-[14:06:41] logs test 3986911.7427994884
-[14:06:41] [ZodiacSigns] getSign is OK!
-[14:06:41] [ZodiacSigns] hasSign is OK!
-[14:06:42] [HttpParser] getHtmlString is OK!
-[14:06:42] [HttpParser] getElementsByClassName is OK!
-[14:06:42] [HttpParser] getElementsTextByClassName is OK!
-[14:06:42] [Horoscope] constructor is OK!
-[14:06:43] [Horoscope] getPredictionDay is OK!
-[14:06:44] [Horoscope] getPrediction is OK!
-[14:06:44] [Bot] me is OK!
-[14:06:44] [Bot] methods is OK!
-[14:06:44] [TextMessagesHandler] isTextCommand is OK!
-[14:06:44] [Commands] has is OK!
-[14:06:44] [Commands] equal is OK!
-[14:06:44] [Settings] getChatSetting is OK!
-[14:06:44] [Settings] toggleChatSetting is OK!
-[14:06:45] Horoscope bot launched!
-[14:06:58] logs test 12728713.534506971
-[14:06:58] [ZodiacSigns] getSign is OK!
-[14:06:58] [ZodiacSigns] hasSign is OK!
-[14:06:59] [HttpParser] getHtmlString is OK!
-[14:06:59] [HttpParser] getElementsByClassName is OK!
-[14:06:59] [HttpParser] getElementsTextByClassName is OK!
-[14:06:59] [Horoscope] constructor is OK!
-[14:07:00] [Horoscope] getPredictionDay is OK!
-[14:07:01] [Horoscope] getPrediction is OK!
-[14:07:01] [Bot] me is OK!
-[14:07:01] [Bot] methods is OK!
-[14:07:01] [TextMessagesHandler] isTextCommand is OK!
-[14:07:01] [Commands] has is OK!
-[14:07:01] [Commands] equal is OK!
-[14:07:01] [Settings] getChatSetting is OK!
-[14:07:01] [Settings] toggleChatSetting is OK!
-[14:07:02] Horoscope bot launched!
-[14:12:07] logs test 8356429.69691278
-[14:12:07] [ZodiacSigns] getSign is OK!
-[14:12:07] [ZodiacSigns] hasSign is OK!
-[14:12:08] [HttpParser] getHtmlString is OK!
-[14:12:08] [HttpParser] getElementsByClassName is OK!
-[14:12:08] [HttpParser] getElementsTextByClassName is OK!
-[14:12:08] [Horoscope] constructor is OK!
-[14:12:09] [Horoscope] getPredictionDay is OK!
-[14:12:10] [Horoscope] getPrediction is OK!
-[14:12:10] [Bot] me is OK!
-[14:12:10] [Bot] methods is OK!
-[14:12:10] [TextMessagesHandler] isTextCommand is OK!
-[14:12:10] [Commands] has is OK!
-[14:12:10] [Commands] equal is OK!
-[14:12:10] [Settings] getChatSetting is OK!
-[14:12:10] [Settings] toggleChatSetting is OK!
-[14:12:10] Horoscope bot launched!
-[14:13:28] logs test 12446654.508361544
-[14:13:28] [ZodiacSigns] getSign is OK!
-[14:13:28] [ZodiacSigns] hasSign is OK!
-[14:13:29] [HttpParser] getHtmlString is OK!
-[14:13:29] [HttpParser] getElementsByClassName is OK!
-[14:13:29] [HttpParser] getElementsTextByClassName is OK!
-[14:13:29] [Horoscope] constructor is OK!
-[14:13:30] [Horoscope] getPredictionDay is OK!
-[14:13:31] [Horoscope] getPrediction is OK!
-[14:13:31] [Bot] me is OK!
-[14:13:31] [Bot] methods is OK!
-[14:13:31] [TextMessagesHandler] isTextCommand is OK!
-[14:13:31] [Commands] has is OK!
-[14:13:31] [Commands] equal is OK!
-[14:13:31] [Settings] getChatSetting is OK!
-[14:13:31] [Settings] toggleChatSetting is OK!
-[14:13:32] Horoscope bot launched!
-[14:22:18] logs test 11745098.925308947
-[14:22:18] [ZodiacSigns] getSign is OK!
-[14:22:18] [ZodiacSigns] hasSign is OK!
-[14:22:19] [HttpParser] getHtmlString is OK!
-[14:22:19] [HttpParser] getElementsByClassName is OK!
-[14:22:19] [HttpParser] getElementsTextByClassName is OK!
-[14:22:19] [Horoscope] constructor is OK!
-[14:22:20] [Horoscope] getPredictionDay is OK!
-[14:22:20] [Horoscope] getPrediction is OK!
-[14:22:20] [Bot] me is OK!
-[14:22:21] [Bot] methods is OK!
-[14:22:21] [TextMessagesHandler] isTextCommand is OK!
-[14:22:21] [Commands] has is OK!
-[14:22:21] [Commands] equal is OK!
-[14:22:21] [Settings] getChatSetting is OK!
-[14:22:21] [Settings] toggleChatSetting is OK!
-[14:22:21] Horoscope bot launched!
-[14:27:48] logs test 3208812.857944102
-[14:27:48] [ZodiacSigns] getSign is OK!
-[14:27:48] [ZodiacSigns] hasSign is OK!
-[14:27:49] [HttpParser] getHtmlString is OK!
-[14:27:49] [HttpParser] getElementsByClassName is OK!
-[14:27:49] [HttpParser] getElementsTextByClassName is OK!
-[14:27:49] [Horoscope] constructor is OK!
-[14:27:50] [Horoscope] getPredictionDay is OK!
-[14:27:51] [Horoscope] getPrediction is OK!
-[14:27:51] [Bot] me is OK!
-[14:27:51] [Bot] methods is OK!
-[14:27:51] [TextMessagesHandler] isTextCommand is OK!
-[14:27:51] [Commands] has is OK!
-[14:27:51] [Commands] equal is OK!
-[14:27:51] [Settings] getChatSetting is OK!
-[14:27:51] [Settings] toggleChatSetting is OK!
-[14:27:52] Horoscope bot launched!
-[14:30:20] logs test 9776074.86974325
-[14:30:20] [ZodiacSigns] getSign is OK!
-[14:30:20] [ZodiacSigns] hasSign is OK!
-[14:30:21] [HttpParser] getHtmlString is OK!
-[14:30:21] [HttpParser] getElementsByClassName is OK!
-[14:30:21] [HttpParser] getElementsTextByClassName is OK!
-[14:30:21] [Horoscope] constructor is OK!
-[14:30:22] [Horoscope] getPredictionDay is OK!
-[14:30:23] [Horoscope] getPrediction is OK!
-[14:30:23] [Bot] me is OK!
-[14:30:23] [Bot] methods is OK!
-[14:30:23] [TextMessagesHandler] isTextCommand is OK!
-[14:30:23] [Commands] has is OK!
-[14:30:23] [Commands] equal is OK!
-[14:30:23] [Settings] getChatSetting is OK!
-[14:30:23] [Settings] toggleChatSetting is OK!
-[14:30:24] Horoscope bot launched!
-[14:30:44] logs test 3677032.5384375746
-[14:30:44] [ZodiacSigns] getSign is OK!
-[14:30:44] [ZodiacSigns] hasSign is OK!
-[14:30:45] [HttpParser] getHtmlString is OK!
-[14:30:45] [HttpParser] getElementsByClassName is OK!
-[14:30:45] [HttpParser] getElementsTextByClassName is OK!
-[14:30:45] [Horoscope] constructor is OK!
-[14:30:46] [Horoscope] getPredictionDay is OK!
-[14:30:47] [Horoscope] getPrediction is OK!
-[14:30:47] [Bot] me is OK!
-[14:30:47] [Bot] methods is OK!
-[14:30:47] [TextMessagesHandler] isTextCommand is OK!
-[14:30:47] [Commands] has is OK!
-[14:30:47] [Commands] equal is OK!
-[14:30:47] [Settings] getChatSetting is OK!
-[14:30:47] [Settings] toggleChatSetting is OK!
-[14:30:48] Horoscope bot launched!
-[14:31:51] logs test 3598582.0720030866
-[14:31:51] [ZodiacSigns] getSign is OK!
-[14:31:51] [ZodiacSigns] hasSign is OK!
-[14:31:52] [HttpParser] getHtmlString is OK!
-[14:31:52] [HttpParser] getElementsByClassName is OK!
-[14:31:52] [HttpParser] getElementsTextByClassName is OK!
-[14:31:52] [Horoscope] constructor is OK!
-[14:31:53] [Horoscope] getPredictionDay is OK!
-[14:31:54] [Horoscope] getPrediction is OK!
-[14:31:54] [Bot] me is OK!
-[14:31:54] [Bot] methods is OK!
-[14:31:54] [TextMessagesHandler] isTextCommand is OK!
-[14:31:54] [Commands] has is OK!
-[14:31:54] [Commands] equal is OK!
-[14:31:54] [Settings] getChatSetting is OK!
-[14:31:54] [Settings] toggleChatSetting is OK!
-[14:31:54] Horoscope bot launched!
-[14:33:37] logs test 8435319.372539368
-[14:33:37] [ZodiacSigns] getSign is OK!
-[14:33:37] [ZodiacSigns] hasSign is OK!
-[14:33:38] [HttpParser] getHtmlString is OK!
-[14:33:38] [HttpParser] getElementsByClassName is OK!
-[14:33:38] [HttpParser] getElementsTextByClassName is OK!
-[14:33:38] [Horoscope] constructor is OK!
-[14:33:39] [Horoscope] getPredictionDay is OK!
-[14:33:39] [Horoscope] getPrediction is OK!
-[14:33:39] [Bot] me is OK!
-[14:33:40] [Bot] methods is OK!
-[14:33:40] [TextMessagesHandler] isTextCommand is OK!
-[14:33:40] [Commands] has is OK!
-[14:33:40] [Commands] equal is OK!
-[14:33:40] [Settings] getChatSetting is OK!
-[14:33:40] [Settings] toggleChatSetting is OK!
-[14:33:40] Horoscope bot launched!
-[17:32:12] logs test 16643156.418719554
-[17:32:12] [ZodiacSigns] getSign is OK!
-[17:32:12] [ZodiacSigns] hasSign is OK!
-[17:32:13] [HttpParser] getHtmlString is OK!
-[17:32:13] [HttpParser] getElementsByClassName is OK!
-[17:32:13] [HttpParser] getElementsTextByClassName is OK!
-[17:32:13] [Horoscope] constructor is OK!
-[17:32:14] [Horoscope] getPredictionDay is OK!
-[17:32:15] [Horoscope] getPrediction is OK!
-[17:32:15] [Bot] me is OK!
-[17:32:15] [Bot] methods is OK!
-[17:32:15] [TextMessagesHandler] isTextCommand is OK!
-[17:32:15] [Commands] has is OK!
-[17:32:15] [Commands] equal is OK!
-[17:32:15] [Settings] getChatSetting is OK!
-[17:32:15] [Settings] toggleChatSetting is OK!
-[17:32:15] Horoscope bot launched!
-[17:35:33] logs test 6086813.180840843
-[17:35:33] [ZodiacSigns] getSign is OK!
-[17:35:33] [ZodiacSigns] hasSign is OK!
-[17:35:34] [HttpParser] getHtmlString is OK!
-[17:35:34] [HttpParser] getElementsByClassName is OK!
-[17:35:34] [HttpParser] getElementsTextByClassName is OK!
-[17:35:34] [Horoscope] constructor is OK!
-[17:35:35] [Horoscope] getPredictionDay is OK!
-[17:35:36] [Horoscope] getPrediction is OK!
-[17:35:36] [Bot] me is OK!
-[17:35:36] [Bot] methods is OK!
-[17:35:36] [TextMessagesHandler] isTextCommand is OK!
-[17:35:36] [Commands] has is OK!
-[17:35:36] [Commands] equal is OK!
-[17:35:36] [Settings] getChatSetting is OK!
-[17:35:36] [Settings] toggleChatSetting is OK!
-[17:35:37] Horoscope bot launched!
-[17:41:56] logs test 6338116.108753693
-[17:41:56] [ZodiacSigns] getSign is OK!
-[17:41:56] [ZodiacSigns] hasSign is OK!
-[17:41:57] [HttpParser] getHtmlString is OK!
-[17:41:57] [HttpParser] getElementsByClassName is OK!
-[17:41:57] [HttpParser] getElementsTextByClassName is OK!
-[17:41:57] [Horoscope] constructor is OK!
-[17:41:58] [Horoscope] getPredictionDay is OK!
-[17:41:58] [Horoscope] getPrediction is OK!
-[17:41:58] [Bot] me is OK!
-[17:41:59] [Bot] methods is OK!
-[17:41:59] [TextMessagesHandler] isTextCommand is OK!
-[17:41:59] [Commands] has is OK!
-[17:41:59] [Commands] equal is OK!
-[17:41:59] [Settings] getChatSetting is OK!
-[17:41:59] [Settings] toggleChatSetting is OK!
-[17:41:59] Horoscope bot launched!
-[17:43:16] logs test 15177187.840646613
-[17:43:16] [ZodiacSigns] getSign is OK!
-[17:43:16] [ZodiacSigns] hasSign is OK!
-[17:43:16] [HttpParser] getHtmlString is OK!
-[17:43:17] [HttpParser] getElementsByClassName is OK!
-[17:43:17] [HttpParser] getElementsTextByClassName is OK!
-[17:43:17] [Horoscope] constructor is OK!
-[17:43:17] [Horoscope] getPredictionDay is OK!
-[17:43:18] [Horoscope] getPrediction is OK!
-[17:43:18] [Bot] me is OK!
-[17:43:19] [Bot] methods is OK!
-[17:43:19] [TextMessagesHandler] isTextCommand is OK!
-[17:43:19] [Commands] has is OK!
-[17:43:19] [Commands] equal is OK!
-[17:43:19] [Settings] getChatSetting is OK!
-[17:43:19] [Settings] toggleChatSetting is OK!
-[17:43:19] Horoscope bot launched!
-[17:44:05] logs test 3157008.0601234213
-[17:44:05] [ZodiacSigns] getSign is OK!
-[17:44:05] [ZodiacSigns] hasSign is OK!
-[17:44:06] [HttpParser] getHtmlString is OK!
-[17:44:06] [HttpParser] getElementsByClassName is OK!
-[17:44:06] [HttpParser] getElementsTextByClassName is OK!
-[17:44:06] [Horoscope] constructor is OK!
-[17:44:07] [Horoscope] getPredictionDay is OK!
-[17:44:08] [Horoscope] getPrediction is OK!
-[17:44:08] [Bot] me is OK!
-[17:44:08] [Bot] methods is OK!
-[17:44:08] [TextMessagesHandler] isTextCommand is OK!
-[17:44:08] [Commands] has is OK!
-[17:44:08] [Commands] equal is OK!
-[17:44:08] [Settings] getChatSetting is OK!
-[17:44:08] [Settings] toggleChatSetting is OK!
-[17:44:08] Horoscope bot launched!
-[17:47:02] logs test 16583791.369734673
-[17:47:02] [ZodiacSigns] getSign is OK!
-[17:47:02] [ZodiacSigns] hasSign is OK!
-[17:47:03] [HttpParser] getHtmlString is OK!
-[17:47:03] [HttpParser] getElementsByClassName is OK!
-[17:47:03] [HttpParser] getElementsTextByClassName is OK!
-[17:47:03] [Horoscope] constructor is OK!
-[17:47:04] [Horoscope] getPredictionDay is OK!
-[17:47:05] [Horoscope] getPrediction is OK!
-[17:47:05] [Bot] me is OK!
-[17:47:05] [Bot] methods is OK!
-[17:47:05] [TextMessagesHandler] isTextCommand is OK!
-[17:47:05] [Commands] has is OK!
-[17:47:05] [Commands] equal is OK!
-[17:47:05] [Settings] getChatSetting is OK!
-[17:47:05] [Settings] toggleChatSetting is OK!
-[17:47:06] Horoscope bot launched!
-[17:47:57] logs test 7713298.657062077
-[17:47:57] [ZodiacSigns] getSign is OK!
-[17:47:57] [ZodiacSigns] hasSign is OK!
-[17:47:58] [HttpParser] getHtmlString is OK!
-[17:47:58] [HttpParser] getElementsByClassName is OK!
-[17:47:58] [HttpParser] getElementsTextByClassName is OK!
-[17:47:58] [Horoscope] constructor is OK!
-[17:47:59] [Horoscope] getPredictionDay is OK!
-[17:48:00] [Horoscope] getPrediction is OK!
-[17:48:00] [Bot] me is OK!
-[17:48:00] [Bot] methods is OK!
-[17:48:00] [TextMessagesHandler] isTextCommand is OK!
-[17:48:00] [Commands] has is OK!
-[17:48:00] [Commands] equal is OK!
-[17:48:00] [Settings] getChatSetting is OK!
-[17:48:00] [Settings] toggleChatSetting is OK!
-[17:48:01] Horoscope bot launched!
-[17:54:56] logs test 2706100.3130895547
-[17:54:56] [ZodiacSigns] getSign is OK!
-[17:54:56] [ZodiacSigns] hasSign is OK!
-[17:54:57] [HttpParser] getHtmlString is OK!
-[17:54:57] [HttpParser] getElementsByClassName is OK!
-[17:54:57] [HttpParser] getElementsTextByClassName is OK!
-[17:54:57] [Horoscope] constructor is OK!
-[17:54:58] [Horoscope] getPredictionDay is OK!
-[17:54:59] [Horoscope] getPrediction is OK!
-[17:54:59] [Bot] me is OK!
-[17:54:59] [Bot] methods is OK!
-[17:54:59] [TextMessagesHandler] isTextCommand is OK!
-[17:54:59] [Commands] has is OK!
-[17:54:59] [Commands] equal is OK!
-[17:54:59] [Settings] getChatSetting is OK!
-[17:54:59] [Settings] toggleChatSetting is OK!
-[17:55:00] Horoscope bot launched!
-[17:56:02] logs test 11291239.501987513
-[17:56:02] [ZodiacSigns] getSign is OK!
-[17:56:02] [ZodiacSigns] hasSign is OK!
-[17:56:03] [HttpParser] getHtmlString is OK!
-[17:56:03] [HttpParser] getElementsByClassName is OK!
-[17:56:03] [HttpParser] getElementsTextByClassName is OK!
-[17:56:03] [Horoscope] constructor is OK!
-[17:56:03] [Horoscope] getPredictionDay is OK!
-[17:56:04] [Horoscope] getPrediction is OK!
-[17:56:04] [Bot] me is OK!
-[17:56:05] [Bot] methods is OK!
-[17:56:05] [TextMessagesHandler] isTextCommand is OK!
-[17:56:05] [Commands] has is OK!
-[17:56:05] [Commands] equal is OK!
-[17:56:05] [Settings] getChatSetting is OK!
-[17:56:05] [Settings] toggleChatSetting is OK!
-[17:56:05] Horoscope bot launched!
-[17:57:04] logs test 12711368.876802176
-[17:57:04] [ZodiacSigns] getSign is OK!
-[17:57:04] [ZodiacSigns] hasSign is OK!
-[17:57:05] [HttpParser] getHtmlString is OK!
-[17:57:05] [HttpParser] getElementsByClassName is OK!
-[17:57:05] [HttpParser] getElementsTextByClassName is OK!
-[17:57:05] [Horoscope] constructor is OK!
-[17:57:06] [Horoscope] getPredictionDay is OK!
-[17:57:06] [Horoscope] getPrediction is OK!
-[17:57:06] [Bot] me is OK!
-[17:57:07] [Bot] methods is OK!
-[17:57:07] [TextMessagesHandler] isTextCommand is OK!
-[17:57:07] [Commands] has is OK!
-[17:57:07] [Commands] equal is OK!
-[17:57:07] [Settings] getChatSetting is OK!
-[17:57:07] [Settings] toggleChatSetting is OK!
-[17:57:07] Horoscope bot launched!
-[18:03:14] logs test 10620032.689915366
-[18:03:14] [ZodiacSigns] getSign is OK!
-[18:03:14] [ZodiacSigns] hasSign is OK!
-[18:03:15] [HttpParser] getHtmlString is OK!
-[18:03:15] [HttpParser] getElementsByClassName is OK!
-[18:03:15] [HttpParser] getElementsTextByClassName is OK!
-[18:03:15] [Horoscope] constructor is OK!
-[18:03:16] [Horoscope] getPredictionDay is OK!
-[18:03:16] [Horoscope] getPrediction is OK!
-[18:03:16] [Bot] me is OK!
-[18:03:17] [Bot] methods is OK!
-[18:03:17] [TextMessagesHandler] isTextCommand is OK!
-[18:03:17] [Commands] has is OK!
-[18:03:17] [Commands] equal is OK!
-[18:03:17] [Settings] getChatSetting is OK!
-[18:03:17] [Settings] toggleChatSetting is OK!
-[18:03:17] Horoscope bot launched!
+[18:55:52] logs test 6544784.460402152
+[18:55:52] [ZodiacSigns] getSign is OK!
+[18:55:52] [ZodiacSigns] hasSign is OK!
+[18:55:53] [HttpParser] getHtmlString is OK!
+[18:55:53] [HttpParser] getElementsByClassName is OK!
+[18:55:53] [HttpParser] getElementsTextByClassName is OK!
+[18:55:53] [Horoscope] constructor is OK!
+[18:55:54] [Horoscope] getPredictionDate is OK!
+[18:55:54] [Horoscope] getPrediction is OK!
+[18:55:54] [Bot] me is OK!
+[18:55:55] [Bot] methods is OK!
+[18:55:55] [TextMessagesHandler] isTextCommand is OK!
+[18:55:55] [Commands] has is OK!
+[18:55:55] [Commands] equal is OK!
+[18:55:55] [Settings] getChatSetting is OK!
+[18:55:55] [Settings] toggleChatSetting is OK!
+[18:55:55] Horoscope bot launched!
+[18:55:56] New prediction! (23 мая)
+[18:55:56] aries prediction updating...
+[18:55:56] taurus prediction updating...
+[18:55:57] gemini prediction updating...
+[18:55:58] cancer prediction updating...
+[18:55:58] leo prediction updating...
+[18:55:59] virgo prediction updating...
+[18:56:00] libra prediction updating...
+[18:56:01] scorpio prediction updating...
+[18:56:01] sagittarius prediction updating...
+[18:56:02] capricorn prediction updating...
+[18:56:03] aquarius prediction updating...
+[18:56:04] pisces prediction updating...
+[18:56:28] logs test 1175410.213715812
+[18:56:28] [ZodiacSigns] getSign is OK!
+[18:56:28] [ZodiacSigns] hasSign is OK!
+[18:56:29] [HttpParser] getHtmlString is OK!
+[18:56:29] [HttpParser] getElementsByClassName is OK!
+[18:56:29] [HttpParser] getElementsTextByClassName is OK!
+[18:56:29] [Horoscope] constructor is OK!
+[18:56:30] [Horoscope] getPredictionDate is OK!
+[18:56:31] [Horoscope] getPrediction is OK!
+[18:56:31] [Bot] me is OK!
+[18:56:31] [Bot] methods is OK!
+[18:56:31] [TextMessagesHandler] isTextCommand is OK!
+[18:56:31] [Commands] has is OK!
+[18:56:31] [Commands] equal is OK!
+[18:56:31] [Settings] getChatSetting is OK!
+[18:56:31] [Settings] toggleChatSetting is OK!
+[18:56:31] Horoscope bot launched!
+[18:56:32] New prediction! (23 мая)
+[18:56:32] aries prediction updating...
+[18:56:33] taurus prediction updating...
+[18:56:33] gemini prediction updating...
+[18:56:34] cancer prediction updating...
+[18:56:35] leo prediction updating...
+[18:56:35] virgo prediction updating...
+[18:56:36] libra prediction updating...
+[18:56:37] scorpio prediction updating...
+[18:56:38] sagittarius prediction updating...
+[18:56:39] capricorn prediction updating...
+[18:56:39] aquarius prediction updating...
+[18:56:40] pisces prediction updating...
+[18:56:58] Sending aquarius horoscope to -1001662590330 chat...
+[18:57:22] Sending capricorn horoscope to -1001662590330 chat...
+[18:58:18] Sending pisces horoscope to -1001662590330 chat...
+[18:59:00] Sending virgo horoscope to -1001662590330 chat...

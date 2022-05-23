@@ -2,6 +2,7 @@ import { Telegraf, Telegram } from "telegraf"
 import { TextMessage, CallbackQuery } from "./interfaces"
 import { textMessagesHandler } from "./text-messages-handler"
 import { callbackQueryHandler } from "./callback-query-handler"
+import { horoscopeSender } from "./horoscope-sender"
 import { commands } from "./commands"
 import { logs } from "./logs"
 
@@ -36,6 +37,8 @@ class Bot {
 
     this.handleTextMessages()
     this.handleCallbackQuery()
+
+    horoscopeSender.run(this.methods)
 
     this.me.launch()
       .then(() => logs.write("Horoscope bot launched!"))

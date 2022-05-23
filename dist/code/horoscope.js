@@ -16,11 +16,12 @@ class Horoscope {
     constructor(zodiac) {
         this.baseUrl = "horo.mail.ru";
         this.zodiac = "";
-        this.getPredictionDay = () => __awaiter(this, void 0, void 0, function* () {
+        this.getPredictionDate = () => __awaiter(this, void 0, void 0, function* () {
             const fullUrl = this.baseUrl;
             const parser = new http_parser_1.HttpParser(fullUrl);
             const day = yield parser.getElementsTextByClassName("p-prediction__date-day");
-            return Number(day);
+            const month = yield parser.getElementsTextByClassName("p-prediction__date__text__inner");
+            return day + " " + month;
         });
         this.getPrediction = () => __awaiter(this, void 0, void 0, function* () {
             const fullUrl = this.baseUrl + "/prediction/" + this.zodiac + "/today";

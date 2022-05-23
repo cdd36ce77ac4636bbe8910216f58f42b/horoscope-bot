@@ -19,11 +19,15 @@ class SettingsTest {
             settings_1.settings.toggleChatSetting(-1, "capricorn");
             assert_1.default.equal(settings_1.settings.getChatSetting(-1, "capricorn"), true);
         };
+        this.clearTestChats = () => {
+            delete settings_1.settings.currentSettings[-1];
+        };
         this.run = () => {
             this.testGetChatSetting();
             logs_1.logs.writeSuccessTestMessage("Settings", "getChatSetting");
             this.testToggleChatSetting();
             logs_1.logs.writeSuccessTestMessage("Settings", "toggleChatSetting");
+            this.clearTestChats();
         };
     }
 }

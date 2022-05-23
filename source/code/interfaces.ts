@@ -3,6 +3,14 @@ import { Telegram } from "telegraf"
 export type InlineKeyboard = Array<Array<{ callback_data: string, text: string }>>
 export type QueryData = { chatId: number, messageId: number, methods: Telegram, data: string }
 
+export interface Predictions {
+  [key: string]: string
+}
+
+export interface HoroscopeSended {
+  [key: string]: { [key: string]: boolean }
+}
+
 export interface ChatSettings {
   silent: boolean,
   signs: {

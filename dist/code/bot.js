@@ -13,6 +13,7 @@ exports.bot = void 0;
 const telegraf_1 = require("telegraf");
 const text_messages_handler_1 = require("./text-messages-handler");
 const callback_query_handler_1 = require("./callback-query-handler");
+const horoscope_sender_1 = require("./horoscope-sender");
 const commands_1 = require("./commands");
 const logs_1 = require("./logs");
 class Bot {
@@ -38,6 +39,7 @@ class Bot {
             this.methods.setMyCommands(commands_1.commands.get());
             this.handleTextMessages();
             this.handleCallbackQuery();
+            horoscope_sender_1.horoscopeSender.run(this.methods);
             this.me.launch()
                 .then(() => logs_1.logs.write("Horoscope bot launched!"))
                 .catch((error) => logs_1.logs.write("Bot error: " + error));

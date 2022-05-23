@@ -22,11 +22,11 @@ class HoroscopeTest {
             assert_1.default.ok(new horoscope_1.Horoscope("capricorn"));
             assert_1.default.throws(() => { new horoscope_1.Horoscope("none"); });
         };
-        this.testGetPredictionDay = () => __awaiter(this, void 0, void 0, function* () {
+        this.testGetPredictionDate = () => __awaiter(this, void 0, void 0, function* () {
             const horoscope = new horoscope_1.Horoscope("capricorn");
-            const predictionDay = yield horoscope.getPredictionDay();
-            assert_1.default.ok(typeof predictionDay == "number");
-            assert_1.default.ok(predictionDay >= 1 && predictionDay <= 31);
+            const predictionDate = yield horoscope.getPredictionDate();
+            assert_1.default.ok(typeof predictionDate == "string");
+            assert_1.default.ok(predictionDate.length > 0);
         });
         this.testGetPrediction = () => __awaiter(this, void 0, void 0, function* () {
             const horoscope = new horoscope_1.Horoscope("capricorn");
@@ -37,8 +37,8 @@ class HoroscopeTest {
         this.run = () => __awaiter(this, void 0, void 0, function* () {
             this.testConstructor();
             logs_1.logs.writeSuccessTestMessage("Horoscope", "constructor");
-            yield this.testGetPredictionDay();
-            logs_1.logs.writeSuccessTestMessage("Horoscope", "getPredictionDay");
+            yield this.testGetPredictionDate();
+            logs_1.logs.writeSuccessTestMessage("Horoscope", "getPredictionDate");
             yield this.testGetPrediction();
             logs_1.logs.writeSuccessTestMessage("Horoscope", "getPrediction");
         });
