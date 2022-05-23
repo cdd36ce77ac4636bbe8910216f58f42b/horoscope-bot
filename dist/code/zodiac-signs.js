@@ -17,6 +17,18 @@ class ZodiacSigns {
             { en: "aquarius", ru: "♒️ Водолей" },
             { en: "pisces", ru: "♓️ Рыбы" }
         ];
+        this.getKeyboard = () => {
+            const keyboard = [];
+            this.zodiacs.forEach((sign, index) => {
+                const data = { callback_data: sign.en, text: sign.ru };
+                if (index % 2 === 0)
+                    keyboard.push([data]);
+                if (index % 2 === 1)
+                    keyboard[~~(index / 2)].push(data);
+            });
+            keyboard.push([{ callback_data: "return", text: "⬅️ Вернуться" }]);
+            return keyboard;
+        };
         this.getListOfSigns = () => {
             const list = [];
             this.zodiacs.forEach(sign => list.push(sign.en));

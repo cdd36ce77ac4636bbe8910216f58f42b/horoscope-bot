@@ -1,3 +1,5 @@
+import { InlineKeyboard } from "./interfaces"
+
 class ZodiacSigns {
   zodiacs = [
     { en: "aries", ru: "♈️ Овен" },
@@ -13,6 +15,20 @@ class ZodiacSigns {
     { en: "aquarius", ru: "♒️ Водолей" },
     { en: "pisces", ru: "♓️ Рыбы" }
   ]
+
+  getKeyboard = (): InlineKeyboard => {
+    const keyboard: InlineKeyboard = []
+
+    this.zodiacs.forEach((sign, index) => {
+      const data = { callback_data: sign.en, text: sign.ru }
+
+      if (index % 2 === 0) keyboard.push([ data ])
+      if (index % 2 === 1) keyboard[~~(index / 2)].push(data)
+    })
+
+    keyboard.push([{ callback_data: "return", text: "⬅️ Вернуться" }])
+    return keyboard
+  }
 
   getListOfSigns = (): string[] => {
     const list: string[] = []

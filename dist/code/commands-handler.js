@@ -10,35 +10,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.commandsHandler = void 0;
-const callback_query_handler_1 = require("./callback-query-handler");
 const commands_1 = require("./commands");
 const settings_1 = require("./settings");
+const zodiac_signs_1 = require("./zodiac-signs");
 class CommandsHandler {
     constructor() {
-        this.settingsCommand = (methods, chatId) => __awaiter(this, void 0, void 0, function* () {
-            const message = yield methods.sendMessage(chatId, "⚙️");
-            const messageId = message.message_id;
-            callback_query_handler_1.callbackQueryHandler.updateSettingsText({ chatId, messageId, methods }, "main");
-        });
-        this.startCommand = (methods, chatId) => __awaiter(this, void 0, void 0, function* () {
-            if (settings_1.settings.hasChatSettings(chatId)) {
-                yield methods.sendMessage(chatId, "Бот уже запущен!");
-                return;
-            }
-            settings_1.settings.initializeChatSettings(chatId);
-            yield methods.sendMessage(chatId, "Бот отправляющий гороскоп был успешно запущен!");
-            yield this.settingsCommand(methods, chatId);
+        this.sendChatSettingsMessage = (chatId, methods) => __awaiter(this, void 0, void 0, function* () {
+            const text = ("⚙️ Выбранные параметры:\n" + settings_1.settings.getChatSettingsMessage(chatId));
+            yield methods.sendMessage(chatId, text, {
+                reply_markup: { inline_keyboard: zodiac_signs_1.zodiacSigns.getKeyboard() }
+            });
         });
         this.handle = (message, methods) => __awaiter(this, void 0, void 0, function* () {
             const command = message.text;
             const chatId = message.chat.id;
             if (!commands_1.commands.has(command))
                 return;
-            if (commands_1.commands.equal(command, "start")) {
-                yield this.startCommand(methods, chatId);
-            }
+            if (!settings_1.settings.isChatExists(chatId))
+                settings_1.settings.initializeChatSettings(chatId);
             if (commands_1.commands.equal(command, "settings")) {
-                yield this.settingsCommand(methods, chatId);
+                yield this.sendChatSettingsMessage(chatId, methods);
             }
         });
     }

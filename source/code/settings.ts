@@ -1,10 +1,12 @@
 import { ChatSettings, JsonChatSettings } from "./interfaces"
+import { zodiacSigns } from "./zodiac-signs"
 import { fileSystem } from "./filesystem"
 
 class Settings {
   settingsDirectoryPath = "data"
-  currentSettings: JsonChatSettings = {}
-  defaultSettings: ChatSettings = {
+  currentSettings: JsonChatSettings
+
+  readonly defaultChatSettings: ChatSettings = {
     silent: false,
     signs: {
       aries: false,
@@ -25,79 +27,92 @@ class Settings {
   constructor () {
     fileSystem.createPath(this.settingsDirectoryPath)
 
-    if (!fileSystem.isExists(this.getSettingsPath())) {
-      fileSystem.writeJsonFile(this.getSettingsPath(), {})
-    }
-
-    this.currentSettings = fileSystem.readJsonFile(this.getSettingsPath())
+    if (fileSystem.isExists(this.getSettingsPath())) {
+      this.currentSettings = fileSystem.readJsonFile(this.getSettingsPath())
+    } else {
+      this.currentSettings = {}
+    } 
   }
 
-  toggleSilentValue = (chatId: number | string): void => {
-    if (this.hasChatSettings(chatId)) {
+  getChatSettingsMessage = (chatId: number): string => {
+    let text = ""
+
+    if (!this.isChatExists(chatId)) return text
+
+    const chatSettings = this.currentSettings[chatId]
+    const signs = Object.keys(chatSettings.signs)
+
+    if (chatSettings.silent) {
+      text += "🪶 Бесшумный режим\n"
+    }
+
+    signs.forEach(sign => {
+      text += this.getChatSetting(chatId, sign) ? zodiacSigns.getSign(sign).ru + "\n" : ""
+    })
+
+    return text
+  }
+
+  getChatSetting = (chatId: number, settingName: string): boolean => {
+    let result = false
+
+    if (this.isChatExists(chatId)) {
       const chatSettings = this.getChatSettings(chatId)
-      chatSettings.silent = !chatSettings.silent
-      this.setChatSettings(chatId, chatSettings)
+
+      if (settingName === "silent") {
+        result = chatSettings.silent
+      }
+
+      const signs = Object.keys(this.defaultChatSettings.signs)
+
+      signs.forEach(sign => {
+        if (sign === settingName) result = chatSettings.signs[sign]
+      })
     }
 
-    this.updateSettings()
+    return result
   }
 
-  toggleSignValue = (chatId: number | string, sign: string): void => {
-    if (this.hasChatSettings(chatId) && sign in this.getChatSettings(chatId).signs) {
-      const chatSettings = this.getChatSettings(chatId)
-      // @ts-ignore
-      chatSettings.signs[sign] = !chatSettings.signs[sign]
-      this.setChatSettings(chatId, chatSettings)
+  toggleChatSetting = (chatId: number, settingName: string): void => {
+    if (!this.isChatExists(chatId)) return
+
+    const chatSettings = this.getChatSettings(chatId)
+    const settingValue = this.getChatSetting(chatId, settingName)
+    const signs = Object.keys(this.defaultChatSettings.signs)
+
+    if (settingName === "silent") {
+      chatSettings.silent = !settingValue
     }
 
-    this.updateSettings()
+    signs.forEach(sign => {
+      sign === settingName && (chatSettings.signs[sign] = !settingValue)
+    })
+
+    this.setChatSettings(chatId, chatSettings)
   }
 
-  deleteChatSettings = (chatId: number | string): void => {
-    if (this.hasChatSettings(chatId)) {
-      delete this.currentSettings[String(chatId)]
-      this.updateSettings()
-    }
+  initializeChatSettings = (chatId: number): void => {
+    this.setChatSettings(chatId, this.defaultChatSettings)
   }
 
-  initializeChatSettings = (chatId: number | string): void => {
-    if (this.hasChatSettings(chatId)) return
-
-    try {
-      this.setChatSettings(String(chatId), this.defaultSettings)
-    } catch {
-      throw Error("Failed to initialize chat!")
-    }
-    
-    this.updateSettings()
+  getChatSettings = (chatId: number): ChatSettings => {
+    return this.currentSettings[chatId]
   }
 
-  setChatSettings = (chatId: number | string, settings: ChatSettings): void => {
-    this.currentSettings[String(chatId)] = settings
+  setChatSettings = (chatId: number, chatSettings: ChatSettings): void => {
+    this.currentSettings[chatId] = JSON.parse(JSON.stringify(chatSettings))
   }
 
-  getChatSettings = (chatId: number | string): ChatSettings => {
-    if (this.hasChatSettings(chatId)) {
-      return this.currentSettings[String(chatId)]
-    }
-
-    return this.defaultSettings
-  }
-
-  hasChatSettings = (chatId: number | string): boolean => {
-    return !!this.currentSettings[String(chatId)]
-  }
-
-  updateSettings = (): void => {
-    try {
-      fileSystem.writeJsonFile(this.getSettingsPath(), this.currentSettings)
-    } catch {
-      throw Error("Failed to update settings!")
-    }
+  isChatExists = (chatId: number): boolean => {
+    return !!this.currentSettings[chatId]
   }
 
   getSettingsPath = (): string => {
     return this.settingsDirectoryPath + "/settings.json"
+  }
+
+  updateSettingsFile = (): void => {
+    fileSystem.writeJsonFile(this.getSettingsPath(), this.currentSettings)
   }
 }
 

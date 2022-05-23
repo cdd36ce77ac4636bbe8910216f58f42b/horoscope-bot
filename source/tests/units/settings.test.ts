@@ -1,72 +1,30 @@
 import { settings } from "../../code/settings"
 import assert from "assert"
 
-import { fileSystem } from "../../code/filesystem"
 import { logs } from "../../code/logs"
 
 export class SettingsTest {
-  testInitializeChatSettings = (): void => {
-    settings.initializeChatSettings("test-chat")
+  constructor () {}
 
-    const fileData = fileSystem.readFileToString(settings.getSettingsPath())
+  testGetChatSetting = (): void => {
+    settings.initializeChatSettings(-1)
 
-    assert.ok(fileData.includes("test-chat"))
+    assert.equal(settings.getChatSetting(-1, "silent"), false)
   }
 
-  testDeleteChatSettings = (): void => {
-    settings.initializeChatSettings("test-chat")
+  testToggleChatSetting = ():void => {
+    settings.initializeChatSettings(-1)
 
-    assert.equal(settings.hasChatSettings("test-chat"), true)
-    settings.deleteChatSettings("test-chat")
-    assert.equal(settings.hasChatSettings("test-chat"), false)
-  }
-
-  testHasChat = (): void => {
-    settings.deleteChatSettings("test-chat")
-    settings.initializeChatSettings("test-chat")
-
-    assert.equal(settings.hasChatSettings("test-chat"), true)
-    assert.equal(settings.hasChatSettings("non-existing-chat"), false)
-  }
-
-  testToggleSilentValue = (): void => {
-    settings.deleteChatSettings("test-chat")
-    settings.initializeChatSettings("test-chat")
-
-    assert.equal(settings.getChatSettings("test-chat").silent, false)
-    settings.toggleSilentValue("test-chat")
-    assert.equal(settings.getChatSettings("test-chat").silent, true)
-  }
-
-  testToggleSignValue = (): void => {
-    settings.deleteChatSettings("test-chat")
-    settings.initializeChatSettings("test-chat")
-
-    assert.equal(settings.getChatSettings("test-chat").signs.aquarius, false)
-    settings.toggleSignValue("test-chat", "aquarius")
-    assert.equal(settings.getChatSettings("test-chat").signs.aquarius, true)
-  }
-
-  deleteTestChat = (): void => {
-    settings.deleteChatSettings("test-chat")
+    assert.equal(settings.getChatSetting(-1, "capricorn"), false)
+    settings.toggleChatSetting(-1, "capricorn")
+    assert.equal(settings.getChatSetting(-1, "capricorn"), true)
   }
 
   run = (): void => {
-    this.testInitializeChatSettings()
-    logs.writeSuccessTestMessage("Settings", "initializeChatSettings")
+    this.testGetChatSetting()
+    logs.writeSuccessTestMessage("Settings", "getChatSetting")
 
-    this.testDeleteChatSettings()
-    logs.writeSuccessTestMessage("Settings", "deleteChatSettings")
-
-    this.testHasChat()
-    logs.writeSuccessTestMessage("Settings", "hasChat")
-
-    this.testToggleSilentValue()
-    logs.writeSuccessTestMessage("Settings", "toggleSilentValue")
-
-    this.testToggleSignValue()
-    logs.writeSuccessTestMessage("Settings", "toggleSignValue")
-
-    this.deleteTestChat()
+    this.testToggleChatSetting()
+    logs.writeSuccessTestMessage("Settings", "toggleChatSetting")
   }
 }

@@ -88,8 +88,8 @@ class FileSystem {
       path.split("/").reduce((path, dir, index) => {
         const newPath = path + "/" + dir + "/"
   
-        if (index === 1) fileSystem.createDirectory(path)
-        fileSystem.createDirectory(newPath)
+        if (index === 1) this.createDirectory(path)
+        this.createDirectory(newPath)
   
         return newPath
       })

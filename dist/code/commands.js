@@ -4,8 +4,7 @@ exports.commands = void 0;
 class Commands {
     constructor() {
         this.commands = [
-            { command: "start", description: "Starts the bot." },
-            { command: "settings", description: "Sends the message with the bot settings." }
+            { command: "settings", description: "Отправляет сообщение с настройками бота." }
         ];
         this.get = () => {
             return this.commands;
@@ -19,7 +18,7 @@ class Commands {
             return command1 === command2;
         };
         this.fixCommand = (command) => {
-            return command.replace("/", "").replace("@some_horoscope_bot", "");
+            return command.replace("/", "").replace("@some_horoscope_bot", "").replace(" ", "");
         };
     }
 }

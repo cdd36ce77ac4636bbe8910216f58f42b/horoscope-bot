@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.settings = void 0;
+const zodiac_signs_1 = require("./zodiac-signs");
 const filesystem_1 = require("./filesystem");
 class Settings {
     constructor() {
         this.settingsDirectoryPath = "data";
-        this.currentSettings = {};
-        this.defaultSettings = {
+        this.defaultChatSettings = {
             silent: false,
             signs: {
                 aries: false,
@@ -23,68 +23,74 @@ class Settings {
                 pisces: false
             }
         };
-        this.toggleSilentValue = (chatId) => {
-            if (this.hasChatSettings(chatId)) {
-                const chatSettings = this.getChatSettings(chatId);
-                chatSettings.silent = !chatSettings.silent;
-                this.setChatSettings(chatId, chatSettings);
+        this.getChatSettingsMessage = (chatId) => {
+            let text = "";
+            if (!this.isChatExists(chatId))
+                return text;
+            const chatSettings = this.currentSettings[chatId];
+            const signs = Object.keys(chatSettings.signs);
+            if (chatSettings.silent) {
+                text += "🪶 Бесшумный режим\n";
             }
-            this.updateSettings();
+            signs.forEach(sign => {
+                text += this.getChatSetting(chatId, sign) ? zodiac_signs_1.zodiacSigns.getSign(sign).ru + "\n" : "";
+            });
+            return text;
         };
-        this.toggleSignValue = (chatId, sign) => {
-            if (this.hasChatSettings(chatId) && sign in this.getChatSettings(chatId).signs) {
+        this.getChatSetting = (chatId, settingName) => {
+            let result = false;
+            if (this.isChatExists(chatId)) {
                 const chatSettings = this.getChatSettings(chatId);
-                // @ts-ignore
-                chatSettings.signs[sign] = !chatSettings.signs[sign];
-                this.setChatSettings(chatId, chatSettings);
+                if (settingName === "silent") {
+                    result = chatSettings.silent;
+                }
+                const signs = Object.keys(this.defaultChatSettings.signs);
+                signs.forEach(sign => {
+                    if (sign === settingName)
+                        result = chatSettings.signs[sign];
+                });
             }
-            this.updateSettings();
+            return result;
         };
-        this.deleteChatSettings = (chatId) => {
-            if (this.hasChatSettings(chatId)) {
-                delete this.currentSettings[String(chatId)];
-                this.updateSettings();
+        this.toggleChatSetting = (chatId, settingName) => {
+            if (!this.isChatExists(chatId))
+                return;
+            const chatSettings = this.getChatSettings(chatId);
+            const settingValue = this.getChatSetting(chatId, settingName);
+            const signs = Object.keys(this.defaultChatSettings.signs);
+            if (settingName === "silent") {
+                chatSettings.silent = !settingValue;
             }
+            signs.forEach(sign => {
+                sign === settingName && (chatSettings.signs[sign] = !settingValue);
+            });
+            this.setChatSettings(chatId, chatSettings);
         };
         this.initializeChatSettings = (chatId) => {
-            if (this.hasChatSettings(chatId))
-                return;
-            try {
-                this.setChatSettings(String(chatId), this.defaultSettings);
-            }
-            catch (_a) {
-                throw Error("Failed to initialize chat!");
-            }
-            this.updateSettings();
-        };
-        this.setChatSettings = (chatId, settings) => {
-            this.currentSettings[String(chatId)] = settings;
+            this.setChatSettings(chatId, this.defaultChatSettings);
         };
         this.getChatSettings = (chatId) => {
-            if (this.hasChatSettings(chatId)) {
-                return this.currentSettings[String(chatId)];
-            }
-            return this.defaultSettings;
+            return this.currentSettings[chatId];
         };
-        this.hasChatSettings = (chatId) => {
-            return !!this.currentSettings[String(chatId)];
+        this.setChatSettings = (chatId, chatSettings) => {
+            this.currentSettings[chatId] = JSON.parse(JSON.stringify(chatSettings));
         };
-        this.updateSettings = () => {
-            try {
-                filesystem_1.fileSystem.writeJsonFile(this.getSettingsPath(), this.currentSettings);
-            }
-            catch (_a) {
-                throw Error("Failed to update settings!");
-            }
+        this.isChatExists = (chatId) => {
+            return !!this.currentSettings[chatId];
         };
         this.getSettingsPath = () => {
             return this.settingsDirectoryPath + "/settings.json";
         };
+        this.updateSettingsFile = () => {
+            filesystem_1.fileSystem.writeJsonFile(this.getSettingsPath(), this.currentSettings);
+        };
         filesystem_1.fileSystem.createPath(this.settingsDirectoryPath);
-        if (!filesystem_1.fileSystem.isExists(this.getSettingsPath())) {
-            filesystem_1.fileSystem.writeJsonFile(this.getSettingsPath(), {});
+        if (filesystem_1.fileSystem.isExists(this.getSettingsPath())) {
+            this.currentSettings = filesystem_1.fileSystem.readJsonFile(this.getSettingsPath());
         }
-        this.currentSettings = filesystem_1.fileSystem.readJsonFile(this.getSettingsPath());
+        else {
+            this.currentSettings = {};
+        }
     }
 }
 exports.settings = new Settings();

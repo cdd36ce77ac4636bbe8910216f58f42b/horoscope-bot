@@ -6,18 +6,7 @@ export type QueryData = { chatId: number, messageId: number, methods: Telegram }
 export interface ChatSettings {
   silent: boolean,
   signs: {
-    aries: boolean,
-    taurus: boolean,
-    gemini: boolean,
-    cancer: boolean,
-    leo: boolean,
-    virgo: boolean,
-    libra: boolean,
-    scorpio: boolean,
-    sagittarius: boolean,
-    capricorn: boolean,
-    aquarius: boolean,
-    pisces: boolean
+    [sign: string]: boolean
   }
 }
 

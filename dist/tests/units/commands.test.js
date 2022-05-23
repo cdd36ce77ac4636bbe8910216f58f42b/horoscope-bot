@@ -10,14 +10,14 @@ const logs_1 = require("../../code/logs");
 class CommandsTest {
     constructor() {
         this.testHas = () => {
-            const goodCommand = "start";
-            const badCommand = "end";
+            const goodCommand = "settings";
+            const badCommand = "i dont know who i am";
             assert_1.default.equal(commands_1.commands.has(goodCommand), true);
             assert_1.default.equal(commands_1.commands.has(badCommand), false);
         };
         this.testEqual = () => {
-            assert_1.default.equal(commands_1.commands.equal("start", "start"), true);
-            assert_1.default.equal(commands_1.commands.equal("start", "settings"), false);
+            assert_1.default.equal(commands_1.commands.equal("settings", "settings"), true);
+            assert_1.default.equal(commands_1.commands.equal("settings", "command"), false);
         };
         this.run = () => {
             this.testHas();

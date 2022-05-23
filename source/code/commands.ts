@@ -1,7 +1,6 @@
 class Commands {
   commands = [
-    { command: "start", description: "Starts the bot." },
-    { command: "settings", description: "Sends the message with the bot settings." }
+    { command: "settings", description: "Отправляет сообщение с настройками бота." }
   ]
 
   get = () => {
@@ -19,7 +18,7 @@ class Commands {
   }
 
   private fixCommand = (command: string) => {
-    return command.replace("/", "").replace("@some_horoscope_bot", "")
+    return command.replace("/", "").replace("@some_horoscope_bot", "").replace(" ", "")
   }
 }
 

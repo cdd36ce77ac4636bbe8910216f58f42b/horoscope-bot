@@ -24,6 +24,7 @@ class Bot {
 
   handleCallbackQuery = () => {
     this.me.on("callback_query", async context => {
+      if (!context || !context.callbackQuery) return
       const query: CallbackQuery = context.callbackQuery
       await callbackQueryHandler.handle(query, this.methods)
     })

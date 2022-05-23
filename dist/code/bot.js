@@ -27,6 +27,8 @@ class Bot {
         };
         this.handleCallbackQuery = () => {
             this.me.on("callback_query", (context) => __awaiter(this, void 0, void 0, function* () {
+                if (!context || !context.callbackQuery)
+                    return;
                 const query = context.callbackQuery;
                 yield callback_query_handler_1.callbackQueryHandler.handle(query, this.methods);
             }));
