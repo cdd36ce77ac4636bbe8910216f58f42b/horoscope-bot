@@ -46,4 +46,4 @@ class Bot {
   }
 }
 
-export const bot = new Bot("5356554804:AAEo-fCHpAYWTN0OI8IMzDWmjK8cLtcr6Sc")
+export const bot = new Bot("123:abc")

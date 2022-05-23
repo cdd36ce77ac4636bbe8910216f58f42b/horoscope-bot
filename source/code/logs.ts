@@ -22,7 +22,7 @@ class Logs {
   }
 
   getCurrentLogDirectory = (): string => {
-    const currentStringDate = new Date().toLocaleDateString()
+    const currentStringDate = new Date().toLocaleDateString().replace(new RegExp("/", "g"), ".")
     const logPath = this.logsDirectoryPath + "/" + currentStringDate + ".txt"
     return logPath
   }
