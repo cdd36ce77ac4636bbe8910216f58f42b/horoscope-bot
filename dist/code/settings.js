@@ -23,8 +23,14 @@ class Settings {
                 pisces: false
             }
         };
+        this.getKeyboard = () => {
+            return [
+                [{ callback_data: "silent", text: "🪶 Бесшумный режим" }],
+                [{ callback_data: "signs", text: "💫 Знаки зодиака" }]
+            ];
+        };
         this.getChatSettingsMessage = (chatId) => {
-            let text = "";
+            let text = "⚙️ Выбранные параметры:\n";
             if (!this.isChatExists(chatId))
                 return text;
             const chatSettings = this.currentSettings[chatId];

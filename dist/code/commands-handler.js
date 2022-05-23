@@ -12,13 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.commandsHandler = void 0;
 const commands_1 = require("./commands");
 const settings_1 = require("./settings");
-const zodiac_signs_1 = require("./zodiac-signs");
 class CommandsHandler {
     constructor() {
         this.sendChatSettingsMessage = (chatId, methods) => __awaiter(this, void 0, void 0, function* () {
-            const text = ("⚙️ Выбранные параметры:\n" + settings_1.settings.getChatSettingsMessage(chatId));
+            const text = settings_1.settings.getChatSettingsMessage(chatId);
             yield methods.sendMessage(chatId, text, {
-                reply_markup: { inline_keyboard: zodiac_signs_1.zodiacSigns.getKeyboard() }
+                reply_markup: { inline_keyboard: settings_1.settings.getKeyboard() },
+                disable_notification: settings_1.settings.getChatSetting(chatId, "silent")
             });
         });
         this.handle = (message, methods) => __awaiter(this, void 0, void 0, function* () {

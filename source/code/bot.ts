@@ -27,6 +27,7 @@ class Bot {
       if (!context || !context.callbackQuery) return
       const query: CallbackQuery = context.callbackQuery
       await callbackQueryHandler.handle(query, this.methods)
+      await context.answerCbQuery()
     })
   }
 

@@ -1,7 +1,7 @@
 import { Telegram } from "telegraf"
 
 export type InlineKeyboard = Array<Array<{ callback_data: string, text: string }>>
-export type QueryData = { chatId: number, messageId: number, methods: Telegram }
+export type QueryData = { chatId: number, messageId: number, methods: Telegram, data: string }
 
 export interface ChatSettings {
   silent: boolean,
@@ -12,6 +12,7 @@ export interface ChatSettings {
 
 export interface CallbackQuery {
   data?: string,
+  from: { id: number },
   message?: {
     chat: { id: number },
     message_id: number
@@ -24,5 +25,7 @@ export interface JsonChatSettings {
 
 export interface TextMessage {
   text: string,
+  message_id: number,
   chat: { id: number }
+  from: { id: number }
 }

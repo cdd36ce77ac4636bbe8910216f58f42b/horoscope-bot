@@ -1,4 +1,4 @@
-import { ChatSettings, JsonChatSettings } from "./interfaces"
+import { ChatSettings, InlineKeyboard, JsonChatSettings } from "./interfaces"
 import { zodiacSigns } from "./zodiac-signs"
 import { fileSystem } from "./filesystem"
 
@@ -34,8 +34,15 @@ class Settings {
     } 
   }
 
+  getKeyboard = (): InlineKeyboard => {
+    return [
+      [ { callback_data: "silent", text: "🪶 Бесшумный режим" } ],
+      [ { callback_data: "signs", text: "💫 Знаки зодиака" } ]
+    ]
+  }
+
   getChatSettingsMessage = (chatId: number): string => {
-    let text = ""
+    let text = "⚙️ Выбранные параметры:\n"
 
     if (!this.isChatExists(chatId)) return text
 

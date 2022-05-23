@@ -31,6 +31,7 @@ class Bot {
                     return;
                 const query = context.callbackQuery;
                 yield callback_query_handler_1.callbackQueryHandler.handle(query, this.methods);
+                yield context.answerCbQuery();
             }));
         };
         this.run = () => {
