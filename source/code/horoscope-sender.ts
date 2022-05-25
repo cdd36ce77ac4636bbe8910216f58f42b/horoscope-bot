@@ -1,4 +1,4 @@
-import { Predictions, HoroscopeSended } from "./interfaces"
+import { Predictions, HoroscopeSended, ChatSettings } from "./interfaces"
 import { Horoscope } from "./horoscope"
 import { Telegram } from "telegraf"
 import { settings } from "./settings"
@@ -12,7 +12,7 @@ class HoroscopeSender {
 
   constructor () {}
 
-  predictionUpdate = async (): Promise<void> => {
+  updatePredictions = async (): Promise<void> => {
     const signs = zodiacSigns.getListOfSigns()
 
     for (let i = 0; i < signs.length; i++) {
@@ -25,34 +25,47 @@ class HoroscopeSender {
     }
   }
 
-  predictionUpdateCheckTimeout = async (): Promise<void> => {
+  checkPredictionsUpdate = async (): Promise<void> => {
     const horoscope = new Horoscope("aries")
     const predictionDate = await horoscope.getPredictionDate()
     
     if (predictionDate !== this.predictionDate) {
       logs.write("New prediction! (" + predictionDate + ")")
-      await this.predictionUpdate()
+      await this.updatePredictions()
 
       this.sended = {}
       this.predictionDate = predictionDate
     }
 
     setTimeout(
-      async () => await this.predictionUpdateCheckTimeout(),
+      async () => await this.checkPredictionsUpdate(),
       !this.predictionDate ? 1000 : 90000
     )
   }
 
-  sendHoroscopeIfUpdated = async (methods: Telegram): Promise<void> => {
+  chatsCallback = (callback: (chatId: number) => void): void => {
     const chats = Object.keys(settings.currentSettings)
     
     for (let i = 0; i < chats.length; i++) {
       const chatId = Number(chats[i])
+      callback(chatId)
+    }
+  }
+
+  signsCallback = (chatSettings: ChatSettings, callback: (sign: string) => void): void => {
+    const signs = Object.keys(chatSettings.signs)
+  
+    for (let j = 0; j < signs.length; j++) {
+      const sign = signs[j]
+      callback(sign)
+    }
+  }
+
+  sendHoroscopeIfUpdated = async (methods: Telegram): Promise<void> => {
+    this.chatsCallback((chatId) => {
       const chatSettings = settings.getChatSettings(chatId)
-      const signs = Object.keys(chatSettings.signs)
       
-      for (let j = 0; j < signs.length; j++) {
-        const sign = signs[j]
+      this.signsCallback(chatSettings, async (sign) => {
         const signValue = chatSettings.signs[sign]
         const russianSignName = zodiacSigns.getSign(sign).ru
 
@@ -61,16 +74,18 @@ class HoroscopeSender {
         if (signValue === true && this.predictions[sign] && !this.sended[chatId][sign]) {
           logs.write("Sending " + sign + " horoscope to " + chatId + " chat...")
           
-          await methods.sendMessage(
-            chatId,
-            russianSignName + " | " + this.predictionDate + "\n" + this.predictions[sign],
-            { disable_notification: chatSettings.silent }
-          )
-          
           this.sended[chatId][sign] = true
+
+          try {
+            await methods.sendMessage(
+              chatId,
+              russianSignName + " | " + this.predictionDate + "\n" + this.predictions[sign],
+              { disable_notification: chatSettings.silent }
+            )
+          } catch (e) {}
         }
-      }
-    }
+      })
+    })
 
     setTimeout(
       async () => await this.sendHoroscopeIfUpdated(methods),
@@ -80,7 +95,7 @@ class HoroscopeSender {
 
   run = (methods: Telegram): void => {
     this.sendHoroscopeIfUpdated(methods)
-    this.predictionUpdateCheckTimeout()
+    this.checkPredictionsUpdate()
   }
 }
 

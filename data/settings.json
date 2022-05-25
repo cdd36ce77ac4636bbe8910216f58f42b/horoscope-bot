@@ -1,0 +1,19 @@
+{
+	"-1001662590330": {
+		"silent": true,
+		"signs": {
+			"aries": true,
+			"taurus": false,
+			"gemini": false,
+			"cancer": true,
+			"leo": true,
+			"virgo": false,
+			"libra": false,
+			"scorpio": false,
+			"sagittarius": true,
+			"capricorn": false,
+			"aquarius": true,
+			"pisces": true
+		}
+	}
+}
