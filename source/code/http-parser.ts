@@ -30,9 +30,8 @@ export class HttpParser {
     try {
       if (!this.response) this.response = await axios(this.url)
       return this.response.data
-    } catch {
-      throw Error("Bad url!")
-    }
+    } catch {}
+    return ""
   }
 
   private addHttpProtocolToUrl = (url: string): string => {

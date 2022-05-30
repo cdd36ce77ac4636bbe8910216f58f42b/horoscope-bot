@@ -72,16 +72,17 @@ class HoroscopeSender {
         if (!this.sended[chatId]) this.sended[chatId] = {}
 
         if (signValue === true && this.predictions[sign] && !this.sended[chatId][sign]) {
-          logs.write("Sending " + sign + " horoscope to " + chatId + " chat...")
-          
-          this.sended[chatId][sign] = true
-
           try {
-            await methods.sendMessage(
+            const msg = await methods.sendMessage(
               chatId,
               russianSignName + " | " + this.predictionDate + "\n" + this.predictions[sign],
               { disable_notification: chatSettings.silent }
             )
+
+            if (msg && msg.message_id) {
+              logs.write("Sending " + sign + " horoscope to " + chatId + " chat...")
+              this.sended[chatId][sign] = true
+            }
           } catch (e) {}
         }
       })
