@@ -29,7 +29,7 @@ class HoroscopeSender {
     const horoscope = new Horoscope("aries")
     const predictionDate = await horoscope.getPredictionDate()
     
-    if (predictionDate !== this.predictionDate) {
+    if (predictionDate.match(/\d/) && predictionDate !== this.predictionDate) {
       logs.write("New prediction! (" + predictionDate + ")")
       await this.updatePredictions()
 
