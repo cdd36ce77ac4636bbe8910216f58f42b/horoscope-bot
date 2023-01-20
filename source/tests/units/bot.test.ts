@@ -10,7 +10,7 @@ export class BotTest {
     const telegram = bot.me.telegram
     
     assert.ok(telegram)
-    assert.equal(telegram.token, "5356554804:AAEo-fCHpAYWTN0OI8IMzDWmjK8cLtcr6Sc")
+    assert.equal(telegram.token, "1780275092:AAGYPKjbBrgY6uLoE8pMOkJbxu2aREZa1qQ")
   }
 
   testMethods = async (): Promise<void> => {

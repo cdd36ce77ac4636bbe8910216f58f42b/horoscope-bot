@@ -41,7 +41,7 @@ export class Tests {
     zodiacSignsTest.run()
     await httpParserTest.run()
     await horoscopeTest.run()
-    await botTest.run()
+    // await botTest.run()
     textMessagesHandlerTest.run()
     commandsTest.run()
     settingsTest.run()

@@ -1,0 +1,36 @@
+{
+	"899911733": {
+		"silent": false,
+		"signs": {
+			"aries": false,
+			"taurus": true,
+			"gemini": false,
+			"cancer": false,
+			"leo": false,
+			"virgo": false,
+			"libra": false,
+			"scorpio": false,
+			"sagittarius": false,
+			"capricorn": false,
+			"aquarius": false,
+			"pisces": false
+		}
+	},
+	"954984283": {
+		"silent": false,
+		"signs": {
+			"aries": false,
+			"taurus": true,
+			"gemini": false,
+			"cancer": false,
+			"leo": false,
+			"virgo": false,
+			"libra": false,
+			"scorpio": false,
+			"sagittarius": false,
+			"capricorn": false,
+			"aquarius": false,
+			"pisces": false
+		}
+	}
+}
